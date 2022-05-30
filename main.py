@@ -94,7 +94,7 @@ class telaLogin:
             raise Exception("Erro ao tentar abrir a tela de administrador")
 
     def sobre(self):
-        messagebox.showinfo("Desenvolvedores", """Aplicativo de gerenciamento de cinema feito em python e tkinter orientado a objetos feito por\n\nMarcelo Ferreira Feitosa\nGustavo Murillo""")
+        messagebox.showinfo("Desenvolvedores", """Aplicativo de gerenciamento de cinema feito em python e tkinter orientado a objetos feito por\n\nMarcelo Ferreira Feitosa\nGustavo Murilo""")
 
     def abrir_cadastro(self):
         try:
