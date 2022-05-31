@@ -5,6 +5,37 @@ from PIL import ImageTk, Image
 import sqlite3
 
 
+class cadastroSala:
+
+    def fechar(self):
+        self.cadastro_sala.destroy()
+
+    def __init__(self):
+        self.cadastro_sala = Toplevel()
+        self.cadastro_sala.title("Cinemania - Cadastro de Filmes")
+        self.cadastro_sala.configure(height=700, width=500)
+        self.cadastro_sala.resizable(False, False)
+        self.cadastro_sala.iconbitmap("icone.ico")
+
+        Label(self.cadastro_sala, text="Numero da Sala", font="Times, 13", foreground='black').grid(row=0, column=0)
+        Label(self.cadastro_sala, text="Numero de assentos:", font="Times, 13", foreground='black').grid(row=1, column=0)
+
+        self.num_sala = Entry(self.cadastro_sala, font="Times, 10").grid(row=0, column=1)
+        self.num_assentos = Entry(self.cadastro_sala, font="Times, 10").grid(row=1, column=1)
+
+        self.botao = Button(self.cadastro_sala, text="Cadastrar", font="Times, 11")
+        self.botao.configure(width=7, height=1, foreground='white', background="gray", borderwidth='2px',
+                             command=self.fechar)
+        self.botao.grid(row=3, column=0)
+
+        self.botao = Button(self.cadastro_sala, text="Cancelar", font="Times, 11")
+        self.botao.configure(width=7, height=1, foreground='white', background="gray", borderwidth='2px',
+                             command=self.fechar)
+        self.botao.grid(row=3, column=1, padx=15, pady=15)
+
+        self.cadastro_sala.mainloop()
+
+
 class verFilmes:
 
     def fechar(self):
@@ -57,18 +88,24 @@ class atualizarFilme:
         Label(self.atualizar_filme, text="Duração:", font="Times, 13", foreground='black').grid(row=2, column=2)
         Label(self.atualizar_filme, text="Sinopse:", font="Times, 13", foreground='black').grid(row=3, column=0)
 
+
         self.nomeFilme = Entry(self.atualizar_filme, font="Times, 10").grid(row=1, column=1)
         self.diretor = Entry(self.atualizar_filme, font="Times, 10").grid(row=2, column=1)
         self.duracao = Entry(self.atualizar_filme, font="Times, 10").grid(row=2, column=3)
         self.sinopse = Entry(self.atualizar_filme, font="Times, 10").grid(row=3, column=1)
 
+
         self.botao = Button(self.atualizar_filme, text="Atualizar", font="Times, 11")
         self.botao.configure(width=7, height=1, foreground='white', background="gray", borderwidth='2px', command=self.fechar)
-        self.botao.grid(row=5, column=1, pady=15)
+        self.botao.grid(row=5, column=0, columnspan=1, pady=15, padx=20)
+
+        self.botao = Button(self.atualizar_filme, text="Excluir", font="Times, 11")
+        self.botao.configure(width=7, height=1, foreground='white', background="gray", borderwidth='2px')
+        self.botao.grid(row=5, column=3, columnspan=1, pady=15)
 
         self.botao = Button(self.atualizar_filme, text="Cancelar", font="Times, 11")
         self.botao.configure(width=7, height=1, foreground='white', background="gray", borderwidth='2px',command=self.fechar)
-        self.botao.grid(row=5, column=2, pady=15)
+        self.botao.grid(row=9, column=1, columnspan=2, pady=15)
 
         self.cadastros = ttk.Treeview(self.atualizar_filme, selectmode="browse", column=("column1", "column2", "column3", "column4"), show='headings')
         self.cadastros.column("column1", width=100, minwidth=100, stretch=NO)
@@ -99,11 +136,16 @@ class cadastroFilme:
         Label(self.cadastro_filme, text="Diretor:", font="Times, 13", foreground='black').grid(row=1, column=0)
         Label(self.cadastro_filme, text="Duração:", font="Times, 13", foreground='black').grid(row=1, column=2)
         Label(self.cadastro_filme, text="Sinopse:", font="Times, 13", foreground='black').grid(row=2, column=0)
+        Label(self.cadastro_filme, text="Hora:", font="Times, 13", foreground='black').grid(row=3, column=0)
 
         self.nomeFilme = Entry(self.cadastro_filme, font="Times, 10").grid(row=0, column=1)
         self.diretor = Entry(self.cadastro_filme, font="Times, 10").grid(row=1, column=1)
         self.duracao = Entry(self.cadastro_filme, font="Times, 10").grid(row=1, column=3)
         self.sinopse = Entry(self.cadastro_filme, font="Times, 10").grid(row=2, column=1)
+        self.hora_hs = Spinbox(self.cadastro_filme, from_=0, to=23, format="%02.0f", state="readonly", width=3)
+        self.hora_hs.grid(row=3, column=1, sticky=W)
+        self.hora_min = Spinbox(self.cadastro_filme, from_=0, to=59, format="%02.0f", state="readonly", width=3)
+        self.hora_min.grid(row=3, column=1)
 
         self.botao = Button(self.cadastro_filme, text="Cadastrar", font="Times, 11")
         self.botao.configure(width=7, height=1, foreground='white', background="gray", borderwidth='2px',
@@ -118,6 +160,12 @@ class cadastroFilme:
         self.cadastro_filme.mainloop()
 
 class telaAdmin:
+
+    def cadastrar_sala(self):
+        try:
+            cadastroSala()
+        except:
+            raise Exception("Erro ao tentar abrir a lista de filme")
 
     def ver_filmes(self):
         try:
@@ -164,7 +212,7 @@ class telaAdmin:
 
         self.menu_admin.add_separator()
         self.menu_salas = Menu(self.menu_admin, tearoff=0)
-        self.menu_salas.add_command(label="Cadastrar Sala")
+        self.menu_salas.add_command(label="Cadastrar Sala", command=self.cadastrar_sala)
         self.menu_salas.add_separator()
         self.menu_salas.add_command(label="Atualizar Salas")
         self.menu_salas.add_separator()
