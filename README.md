@@ -10,8 +10,8 @@
             
 <div>
   <a href="https://github.com/MarceloFFeitosa">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=MarceloFFeitosa&show_icons=true&theme=nightowl&include_all_commits=true&count_private=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MarceloFFeitosa&layout=compact&langs_count=16&theme=nightowl"/>
+  <img height="140em" src="https://github-readme-stats.vercel.app/api?username=MarceloFFeitosa&show_icons=true&theme=nightowl&include_all_commits=true&count_private=true"/>
+  <img height="140em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MarceloFFeitosa&layout=compact&langs_count=16&theme=nightowl"/>
 </div>
   
     
