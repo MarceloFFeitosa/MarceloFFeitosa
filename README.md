@@ -1,10 +1,10 @@
 ## Oii👋, eu sou o Marcelo e to começando nessa jornada DEV
 
 
-- 🔭 Hoje curso Sistemas de Informação - UFS
+- 💻 Cursando Sistemas de Informação - UFS
 - 🌱 Aprimorando conhecimento de desenvolvimento WEB
 - ⚡ Estudando ReactJS <img align="center" alt="Rafa-React" height="18" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
-- 🔨 Perfil em construção
+- 🔨 Perfil em construção...
 
 <br>
             
