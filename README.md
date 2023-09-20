@@ -10,7 +10,7 @@
             
 <div>
   <a href="https://github.com/MarceloFFeitosa">
-  <img height="160em" src="https://github-readme-stats.vercel.app/api?username=MarceloFFeitosa&show_icons=true&theme=nightowl&include_all_commits=true&count_private=true"/>
+  <!--<img height="160em" src="https://github-readme-stats.vercel.app/api?username=MarceloFFeitosa&show_icons=true&theme=nightowl&include_all_commits=true&count_private=true"/> -->
   <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MarceloFFeitosa&layout=compact&langs_count=16&theme=nightowl"/>
 </div>
   
@@ -31,4 +31,4 @@
   <a href="https://instagram.com/maarceelo_f" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
 </div>
 
-![Snake animation](https://github.com/MarceloFFeitosa/MarceloFFeitosa/blob/output/github-contribution-grid-snake.svg)
+<!-- ![Snake animation](https://github.com/MarceloFFeitosa/MarceloFFeitosa/blob/output/github-contribution-grid-snake.svg) -->
